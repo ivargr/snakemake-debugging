@@ -14,3 +14,12 @@ rule seqtk_seq_fastq_to_fasta:
         extra="-A",
     wrapper:
         "v1.25.0/bio/seqtk/seq"
+
+# Rule without wrapper works:
+#rule seqtk_seq_fastq_to_fasta:
+#    input:
+#        "{prefix}.fastq",
+#    output:
+#        touch("{prefix}.fasta")
+#    params:
+#        extra="-A",
